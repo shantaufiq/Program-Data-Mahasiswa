@@ -68,12 +68,12 @@ namespace Project_Assessment_3
                 goto menu;
                 
             case 0:
-                
+
                 Benerin:
-                
+
 	            Console.Write("are you sure want to quit? -> yes or no : ");
 	            String jawaban = Console.ReadLine();
-	            
+
 	            if(jawaban == "no"){
 	                goto menu;
 	            } else if (jawaban == "yes") {
@@ -93,12 +93,12 @@ namespace Project_Assessment_3
 	                Console.WriteLine("");
 	                goto Benerin;
 	            }	
-	            
+
 	            Console.WriteLine("\nPress Any Key To Exit");
 	            Console.ReadKey();
 	            break;
-			
-            
+
+
 			default:
 	            
 	            if(masukan > 4){
@@ -109,9 +109,9 @@ namespace Project_Assessment_3
 	            		goto menu;
 	        } 
         }
-        
+
 //  --------------------------------------- Akhir Main Program -----------------------------------------------
-        
+
 
 
 //  --------------------------------------- awal function tambah anggota -------------------------------------
@@ -167,11 +167,11 @@ namespace Project_Assessment_3
 				Console.ReadKey();
 
         }
-        
+
 //   --------------------------------------- akhir function menampilkan anggota ---------------------------------
-		
-		
-		
+
+
+
 //	 --------------------------------------- awal function menampilkan anggota --------------------------------- 
 
             public void Cari_Mahasiswa(){
@@ -210,7 +210,7 @@ namespace Project_Assessment_3
 //	 --------------------------------------- awal function menampilkan anggota --------------------------------- 
 
             public void Hapus_Mahasiswa(){
-	
+
 				int hapus;
 					
 				Console.Write("\n\nMasukkan index data yang akan dihapus = ");
@@ -221,7 +221,7 @@ namespace Project_Assessment_3
 					Console.ReadKey();
                 
         }
-        
+
 //   --------------------------------------- akhir function menampilkan anggota ---------------------------------
 
 
