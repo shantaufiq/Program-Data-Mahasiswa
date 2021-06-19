@@ -215,16 +215,9 @@ namespace Project_Assessment_3
 					
 				Console.Write("\n\nMasukkan index data yang akan dihapus = ");
                 hapus = Convert.ToInt32(Console.ReadLine());
-                for (int p = hapus; p < input; p++)
-                {
-                    MyGlobal[p].Id = MyGlobal[p + 1].Id;
-                    input -= 1;
-                }
-                
-                for (int p = 1; p < input; p++)
-                {
-                    Console.WriteLine("your id is : {0} ", MyGlobal[p].Id);
-                }
+
+                Array.Clear(MyGlobal, hapus, 1);
+
 					Console.ReadKey();
                 
         }
