@@ -11,3 +11,29 @@ D:\TELKOM UNIVERSITY\KULIAH SEMESTER 2 (18 SKS)\ALGORITMA DAN PEMROGRAMAN (4 SKS
 D:\TELKOM UNIVERSITY\KULIAH SEMESTER 2 (18 SKS)\ALGORITMA DAN PEMROGRAMAN (4 SKS)\Asessment\Project Assessment 3\obj\Debug\netcoreapp3.1\project-asessment-3.dll
 D:\TELKOM UNIVERSITY\KULIAH SEMESTER 2 (18 SKS)\ALGORITMA DAN PEMROGRAMAN (4 SKS)\Asessment\Project Assessment 3\obj\Debug\netcoreapp3.1\project-asessment-3.pdb
 D:\TELKOM UNIVERSITY\KULIAH SEMESTER 2 (18 SKS)\ALGORITMA DAN PEMROGRAMAN (4 SKS)\Asessment\Project Assessment 3\obj\Debug\netcoreapp3.1\project-asessment-3.genruntimeconfig.cache
+D:\TELKOM UNIVERSITY\KULIAH SEMESTER 2 (18 SKS)\ALGORITMA DAN PEMROGRAMAN (4 SKS)\Asessment\Project Assessment 3\Project-Assessment-3\bin\Debug\netcoreapp3.1\project-asessment-3.exe
+D:\TELKOM UNIVERSITY\KULIAH SEMESTER 2 (18 SKS)\ALGORITMA DAN PEMROGRAMAN (4 SKS)\Asessment\Project Assessment 3\Project-Assessment-3\bin\Debug\netcoreapp3.1\project-asessment-3.deps.json
+D:\TELKOM UNIVERSITY\KULIAH SEMESTER 2 (18 SKS)\ALGORITMA DAN PEMROGRAMAN (4 SKS)\Asessment\Project Assessment 3\Project-Assessment-3\bin\Debug\netcoreapp3.1\project-asessment-3.runtimeconfig.json
+D:\TELKOM UNIVERSITY\KULIAH SEMESTER 2 (18 SKS)\ALGORITMA DAN PEMROGRAMAN (4 SKS)\Asessment\Project Assessment 3\Project-Assessment-3\bin\Debug\netcoreapp3.1\project-asessment-3.runtimeconfig.dev.json
+D:\TELKOM UNIVERSITY\KULIAH SEMESTER 2 (18 SKS)\ALGORITMA DAN PEMROGRAMAN (4 SKS)\Asessment\Project Assessment 3\Project-Assessment-3\bin\Debug\netcoreapp3.1\project-asessment-3.dll
+D:\TELKOM UNIVERSITY\KULIAH SEMESTER 2 (18 SKS)\ALGORITMA DAN PEMROGRAMAN (4 SKS)\Asessment\Project Assessment 3\Project-Assessment-3\bin\Debug\netcoreapp3.1\project-asessment-3.pdb
+D:\TELKOM UNIVERSITY\KULIAH SEMESTER 2 (18 SKS)\ALGORITMA DAN PEMROGRAMAN (4 SKS)\Asessment\Project Assessment 3\Project-Assessment-3\obj\Debug\netcoreapp3.1\project-asessment-3.csprojAssemblyReference.cache
+D:\TELKOM UNIVERSITY\KULIAH SEMESTER 2 (18 SKS)\ALGORITMA DAN PEMROGRAMAN (4 SKS)\Asessment\Project Assessment 3\Project-Assessment-3\obj\Debug\netcoreapp3.1\project-asessment-3.AssemblyInfoInputs.cache
+D:\TELKOM UNIVERSITY\KULIAH SEMESTER 2 (18 SKS)\ALGORITMA DAN PEMROGRAMAN (4 SKS)\Asessment\Project Assessment 3\Project-Assessment-3\obj\Debug\netcoreapp3.1\project-asessment-3.AssemblyInfo.cs
+D:\TELKOM UNIVERSITY\KULIAH SEMESTER 2 (18 SKS)\ALGORITMA DAN PEMROGRAMAN (4 SKS)\Asessment\Project Assessment 3\Project-Assessment-3\obj\Debug\netcoreapp3.1\project-asessment-3.csproj.CoreCompileInputs.cache
+D:\TELKOM UNIVERSITY\KULIAH SEMESTER 2 (18 SKS)\ALGORITMA DAN PEMROGRAMAN (4 SKS)\Asessment\Project Assessment 3\Project-Assessment-3\obj\Debug\netcoreapp3.1\project-asessment-3.dll
+D:\TELKOM UNIVERSITY\KULIAH SEMESTER 2 (18 SKS)\ALGORITMA DAN PEMROGRAMAN (4 SKS)\Asessment\Project Assessment 3\Project-Assessment-3\obj\Debug\netcoreapp3.1\project-asessment-3.pdb
+D:\TELKOM UNIVERSITY\KULIAH SEMESTER 2 (18 SKS)\ALGORITMA DAN PEMROGRAMAN (4 SKS)\Asessment\Project Assessment 3\Project-Assessment-3\obj\Debug\netcoreapp3.1\project-asessment-3.genruntimeconfig.cache
+D:\TELKOM UNIVERSITY\KULIAH SEMESTER 2 (18 SKS)\ALGORITMA DAN PEMROGRAMAN (4 SKS)\Asessment\Project-Assessment-3\bin\Debug\netcoreapp3.1\project-asessment-3.exe
+D:\TELKOM UNIVERSITY\KULIAH SEMESTER 2 (18 SKS)\ALGORITMA DAN PEMROGRAMAN (4 SKS)\Asessment\Project-Assessment-3\bin\Debug\netcoreapp3.1\project-asessment-3.deps.json
+D:\TELKOM UNIVERSITY\KULIAH SEMESTER 2 (18 SKS)\ALGORITMA DAN PEMROGRAMAN (4 SKS)\Asessment\Project-Assessment-3\bin\Debug\netcoreapp3.1\project-asessment-3.runtimeconfig.json
+D:\TELKOM UNIVERSITY\KULIAH SEMESTER 2 (18 SKS)\ALGORITMA DAN PEMROGRAMAN (4 SKS)\Asessment\Project-Assessment-3\bin\Debug\netcoreapp3.1\project-asessment-3.runtimeconfig.dev.json
+D:\TELKOM UNIVERSITY\KULIAH SEMESTER 2 (18 SKS)\ALGORITMA DAN PEMROGRAMAN (4 SKS)\Asessment\Project-Assessment-3\bin\Debug\netcoreapp3.1\project-asessment-3.dll
+D:\TELKOM UNIVERSITY\KULIAH SEMESTER 2 (18 SKS)\ALGORITMA DAN PEMROGRAMAN (4 SKS)\Asessment\Project-Assessment-3\bin\Debug\netcoreapp3.1\project-asessment-3.pdb
+D:\TELKOM UNIVERSITY\KULIAH SEMESTER 2 (18 SKS)\ALGORITMA DAN PEMROGRAMAN (4 SKS)\Asessment\Project-Assessment-3\obj\Debug\netcoreapp3.1\project-asessment-3.csprojAssemblyReference.cache
+D:\TELKOM UNIVERSITY\KULIAH SEMESTER 2 (18 SKS)\ALGORITMA DAN PEMROGRAMAN (4 SKS)\Asessment\Project-Assessment-3\obj\Debug\netcoreapp3.1\project-asessment-3.AssemblyInfoInputs.cache
+D:\TELKOM UNIVERSITY\KULIAH SEMESTER 2 (18 SKS)\ALGORITMA DAN PEMROGRAMAN (4 SKS)\Asessment\Project-Assessment-3\obj\Debug\netcoreapp3.1\project-asessment-3.AssemblyInfo.cs
+D:\TELKOM UNIVERSITY\KULIAH SEMESTER 2 (18 SKS)\ALGORITMA DAN PEMROGRAMAN (4 SKS)\Asessment\Project-Assessment-3\obj\Debug\netcoreapp3.1\project-asessment-3.csproj.CoreCompileInputs.cache
+D:\TELKOM UNIVERSITY\KULIAH SEMESTER 2 (18 SKS)\ALGORITMA DAN PEMROGRAMAN (4 SKS)\Asessment\Project-Assessment-3\obj\Debug\netcoreapp3.1\project-asessment-3.dll
+D:\TELKOM UNIVERSITY\KULIAH SEMESTER 2 (18 SKS)\ALGORITMA DAN PEMROGRAMAN (4 SKS)\Asessment\Project-Assessment-3\obj\Debug\netcoreapp3.1\project-asessment-3.pdb
+D:\TELKOM UNIVERSITY\KULIAH SEMESTER 2 (18 SKS)\ALGORITMA DAN PEMROGRAMAN (4 SKS)\Asessment\Project-Assessment-3\obj\Debug\netcoreapp3.1\project-asessment-3.genruntimeconfig.cache

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\TELKOM UNIVERSITY\\KULIAH SEMESTER 2 (18 SKS)\\ALGORITMA DAN PEMROGRAMAN (4 SKS)\\Asessment\\Project Assessment 3\\project-asessment-3.csproj",
+      "projectUniqueName": "D:\\TELKOM UNIVERSITY\\KULIAH SEMESTER 2 (18 SKS)\\ALGORITMA DAN PEMROGRAMAN (4 SKS)\\Asessment\\Project-Assessment-3\\project-asessment-3.csproj",
       "projectName": "project-asessment-3",
-      "projectPath": "D:\\TELKOM UNIVERSITY\\KULIAH SEMESTER 2 (18 SKS)\\ALGORITMA DAN PEMROGRAMAN (4 SKS)\\Asessment\\Project Assessment 3\\project-asessment-3.csproj",
+      "projectPath": "D:\\TELKOM UNIVERSITY\\KULIAH SEMESTER 2 (18 SKS)\\ALGORITMA DAN PEMROGRAMAN (4 SKS)\\Asessment\\Project-Assessment-3\\project-asessment-3.csproj",
       "packagesPath": "C:\\Users\\MUHAMMAD TAUFIQ\\.nuget\\packages\\",
-      "outputPath": "D:\\TELKOM UNIVERSITY\\KULIAH SEMESTER 2 (18 SKS)\\ALGORITMA DAN PEMROGRAMAN (4 SKS)\\Asessment\\Project Assessment 3\\obj\\",
+      "outputPath": "D:\\TELKOM UNIVERSITY\\KULIAH SEMESTER 2 (18 SKS)\\ALGORITMA DAN PEMROGRAMAN (4 SKS)\\Asessment\\Project-Assessment-3\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\MUHAMMAD TAUFIQ\\AppData\\Roaming\\NuGet\\NuGet.Config"
