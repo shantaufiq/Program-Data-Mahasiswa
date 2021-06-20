@@ -15,7 +15,7 @@ namespace Project_Assessment_3
         static Mahasiswa[] MyGlobal = new Mahasiswa[10]; //variabel array gelobal
         
         int input; //mengecheck jumlah length variabel array gelobal
-        int urutan = 1; //menentukan urutan index
+        
         
         
 
@@ -28,7 +28,7 @@ namespace Project_Assessment_3
 			
         	int masukan;
                 
-                menu :
+                menu : //goto balik ke menu utama
                 Console.Clear();
                 Console.WriteLine("      ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
                 Console.WriteLine("      |               	PROGRAM DAFTAR ABSEN MAHASISWA                       |");
@@ -47,7 +47,6 @@ namespace Project_Assessment_3
                 
         Console.Write("\nInsert Number Of Menu : ");
         masukan = Convert.ToInt32(Console.ReadLine());
-
         
         switch(masukan)
         {
@@ -119,12 +118,12 @@ namespace Project_Assessment_3
         public void Tambah_Mahasiswa(){
 
             Console.Write("Berapa jumlah anggota yang akan anda input : ");
-            int j = urutan + Convert.ToInt32(Console.ReadLine());
+            int j = Convert.ToInt32(Console.ReadLine());
             
             input += j;
 
             
-            for(int i = urutan ; i <  j;  i++){
+            for(int i = 0 ; i <  j;  i++){
             	
                 Console.WriteLine("-------------------------------------------");
             	Console.Write("no absen anggota ke : " );
@@ -134,15 +133,11 @@ namespace Project_Assessment_3
                 Console.Write("Jenis Kelamin : " );
                 MyGlobal[i].Kelamin = Console.ReadLine();
                 Console.WriteLine("-------------------------------------------");
-
-            urutan ++;         		
-
+        		
          	} //akhir mother for
 
             Console.WriteLine("\nPress Any Key To Select Other Menu");
             Console.ReadKey();
-            
-
             
         }
         
@@ -154,7 +149,7 @@ namespace Project_Assessment_3
 
             public void Tampil_Mahasiswa(){
 
-				for(int i = 1; i < input; i++){
+				for(int i = 0; i < input; i++){
 					Console.WriteLine("-------------------------------------------");
             		Console.WriteLine(" Nomor absen mahasiswa ke : " + MyGlobal[i].Id);
             		Console.WriteLine(" Namaa anggota : " + MyGlobal[i].Nama);
