@@ -41,7 +41,7 @@ namespace Project_Assessment_3
                 Console.WriteLine("      |              			                                     |");
                 Console.WriteLine("      |              Ketikan Angk Untuk Memilih Salah 1 Menu                 |");
                 Console.WriteLine("      |_____________________________________________________________________ |");
-                Console.WriteLine("      | 1. Menambahkan Data Mahasiswa                 	                     |");
+                Console.WriteLine("      | 1. Menambahkan Data Mahasiswa / ubah data                 	     |");
                 Console.WriteLine("      | 2. Menampilkan Data Mahasiswa      				     |");
                 Console.WriteLine("      | 3. Mencari Data Mahasiswa      				             |");
                 Console.WriteLine("      | 4. Menghapus Data Mahasiswa     			             |");
@@ -167,12 +167,15 @@ namespace Project_Assessment_3
         public void Tampil_Mahasiswa(){
 
 			for(int i = 0; i < MyGlobal.Length; i++){
-				Console.WriteLine("-------------------------------------------");
-				Console.WriteLine(" Nomor absen mahasiswa ke : " + MyGlobal[i].Id);
-				Console.WriteLine(" Namaa anggota : " + MyGlobal[i].Nama);
-				Console.WriteLine(" Jenis Kelamin : " + MyGlobal[i].Kelamin);
-				Console.WriteLine("-------------------------------------------");
-				Console.WriteLine(MyGlobal.Length);
+
+				if(MyGlobal[i].terisi == 1){
+					Console.WriteLine("-------------------------------------------");
+					Console.WriteLine(" Nomor absen mahasiswa ke : " + MyGlobal[i].Id);
+					Console.WriteLine(" Namaa anggota : " + MyGlobal[i].Nama);
+					Console.WriteLine(" Jenis Kelamin : " + MyGlobal[i].Kelamin);
+					Console.WriteLine("-------------------------------------------");
+					Console.WriteLine(MyGlobal.Length);
+				};
 			}
 
 			Console.WriteLine("\nPress Any Key To Select Other Menu");
@@ -223,14 +226,62 @@ namespace Project_Assessment_3
 //	 --------------------------------------- awal function menampilkan anggota --------------------------------- 
 
         public void Hapus_Mahasiswa(){
-			int hapus;
+
+			string hapus;
+			int cari;
+			int ketemu = 0, posisi = 0;
+
+			//! mencari mahasiswa mana yang akan dihapus
+
+			Console.Write("\n\nNomor absen mahasiswa yang akan anda hapus = ");
+			cari = Convert.ToInt32(Console.ReadLine());
+
+			for (int n = 0; n < MyGlobal.Length; n++){
+				if (cari == MyGlobal[n].Id && MyGlobal[cari-1].terisi == 1){
+					ketemu = 1;
+					posisi = n;
+
+					Console.WriteLine("-------------------------------------------");
+					Console.WriteLine(" mahasiswa dengan no absen ke-{0} Ditemukan", MyGlobal[cari-1].Id);
+					Console.WriteLine(" Nama Mahasiswa : " + MyGlobal[cari-1].Nama);
+					Console.WriteLine(" Jenis Kelamin : " + MyGlobal[cari-1].Kelamin);
+					Console.WriteLine("-------------------------------------------");
+					Console.WriteLine("");
+				}
+			}
+
+			if (ketemu == 0){
+				Console.WriteLine("Maaf Data yang kamu cari tidak ada.");
+			}
 				
-			Console.Write("\n\nMasukkan index data yang akan dihapus = ");
-			hapus = Convert.ToInt32(Console.ReadLine());
+				//! mencari mahasiswa mana yang akan dihapus
 
-			Array.Clear(MyGlobal, hapus, 1);
+				//! akhir section menanyakan yes or no -> eksekusi atau tidak
 
-			Console.ReadKey();
+			Benerin:
+
+			Console.Write("are you sure want to delete this person? -> yes or no : ");
+			hapus = Console.ReadLine();
+
+			if(hapus == "yes"){
+				Array.Clear(MyGlobal, cari - 1, 1);
+				Console.WriteLine("Mahasiswa has been deleted");
+				Console.WriteLine("\nPress Any Key To Select Other Menu");
+				Console.ReadKey();
+			} else if (hapus == "no"){
+				Console.WriteLine("\nPress Any Key for back to menu");
+				Console.ReadKey();
+			} else {
+				Console.WriteLine("");
+				Console.WriteLine("please choose 'yes' or 'no'");
+				Console.WriteLine("");
+				Console.WriteLine("-------------****---------------");
+				Console.WriteLine("");
+				goto Benerin;
+			}
+
+				//! akhir section menanyakan yes or no
+
 						
         }
 
