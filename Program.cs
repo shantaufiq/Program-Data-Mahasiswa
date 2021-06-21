@@ -24,9 +24,10 @@ namespace Project_Assessment_3
         public static void Main(string[] args)
         {
             
-        	Program p = new Program();
+			Program p = new Program();
 			
-        	int masukan;
+			int masukan;
+			// string pilih;
                 
                 menu : //goto balik ke menu utama
                 Console.Clear();
@@ -43,71 +44,78 @@ namespace Project_Assessment_3
                 Console.WriteLine("      | 2. Menampilkan Data Mahasiswa      				     |");
                 Console.WriteLine("      | 3. Mencari Data Mahasiswa      				             |");
                 Console.WriteLine("      | 4. Menghapus Data Mahasiswa     			             |");
-                Console.WriteLine("      |>>>>>>>>>>>>>>>>>>>>>>>>  0.Exit or Menu  <<<<<<<<<<<<<<<<<<<<<<<<<<<<|");
-                
-        Console.Write("\nInsert Number Of Menu : ");
-        masukan = Convert.ToInt32(Console.ReadLine());
-        
-        switch(masukan)
-        {
-            case 1:
-                p.Tambah_Mahasiswa();
-                goto menu;
-                
-            case 2:
-                p.Tampil_Mahasiswa();
-                goto menu;
-                
-            case 3:
-                p.Cari_Mahasiswa();
-                goto menu;
-                
-            case 4:
-                p.Hapus_Mahasiswa();
-                goto menu;
-                
-            case 0:
+                Console.WriteLine("      |>>>>>>>>>>>>>>>>>>>>>>>  0. Exit or Back  <<<<<<<<<<<<<<<<<<<<<<<<<<<<|");
+            try {
+			Console.Write("\nInsert Number Of Menu : ");
+			masukan = Convert.ToInt32(Console.ReadLine());
+			
+			switch(masukan)
+				{
+					case 1:
+						p.Tambah_Mahasiswa();
+						goto menu;
+						
+					case 2:
+						p.Tampil_Mahasiswa();
+						goto menu;
+						
+					case 3:
+						p.Cari_Mahasiswa();
+						goto menu;
+						
+					case 4:
+						p.Hapus_Mahasiswa();
+						goto menu;
+						
+					case 0:
+					Benerin:
 
-                Benerin:
+						Console.Write("are you sure want to quit? -> yes or no : ");
+						String jawaban = Console.ReadLine();
 
-	            Console.Write("are you sure want to quit? -> yes or no : ");
-	            String jawaban = Console.ReadLine();
+						switch(jawaban){
+							case "yes" :
+								Console.WriteLine("-------------------------****-------------------------");
+								Console.WriteLine("");
+								Console.WriteLine("************DO YOUR BEST AND THANK YOU***************");
+								Console.WriteLine("");
+								Console.WriteLine("-------------------------****-------------------------");
+								Console.WriteLine("");
+								break;
+							case "no" :
+								goto menu;
+							default :
+								Console.WriteLine("");
+								Console.WriteLine("please choose 'yes' or 'no'");
+								Console.WriteLine("");
+								Console.WriteLine("-------------****---------------");
+								Console.WriteLine("");
+								goto Benerin;
+						}
 
-	            if(jawaban == "no"){
-	                goto menu;
-	            } else if (jawaban == "yes") {
-	                Console.WriteLine("-------------------------****-------------------------");
-	            	Console.WriteLine("");
-	                Console.WriteLine("************DO YOUR BEST AND THANK YOU***************");
-	                Console.WriteLine("");
-	                Console.WriteLine("-------------------------****-------------------------");
-	                Console.WriteLine("");
-	            } else if (jawaban != "yes" || jawaban != "no"){
-	            	Console.WriteLine("");
-	                Console.WriteLine("please choose 'yes' or 'no'");
-	                Console.WriteLine("");
-	                Console.WriteLine("-------------****---------------");
-	                Console.WriteLine("");
-	                Console.WriteLine("");
-	                Console.WriteLine("");
-	                goto Benerin;
-	            }	
+						Console.WriteLine("\nPress Any Key To Exit");
+						Console.ReadKey();
+						break;
+								
+					default:
+						if (masukan < 0 || masukan > 4){
+							Console.WriteLine("you just entered {0} which is a wrong value", masukan);
+						}
 
-	            Console.WriteLine("\nPress Any Key To Exit");
-	            Console.ReadKey();
-	            break;
+						Console.WriteLine("\nPress Any Key To Exit");
+						Console.ReadKey();
+						goto menu;
 
-
-			default:
-	            
-	            if(masukan > 4){
-	                Console.WriteLine("please input great number from 0-4");
-	                Console.WriteLine("\nPress Any Key To Select Other Menu");
-	            }
-	                    Console.ReadKey();
-	            		goto menu;
-	        } 
-        }
+				} // -> akhir switch
+					
+			}catch (Exception e) {
+				Console.WriteLine(e.Message);
+				Console.WriteLine("you have to write a string data type");
+				Console.WriteLine("\nPress Any Key To Select Other Menu");
+						Console.ReadKey();
+						goto menu;
+			}
+        } // -> akhir main program
 
 //  --------------------------------------- Akhir Main Program -----------------------------------------------
 
@@ -121,19 +129,18 @@ namespace Project_Assessment_3
             int j = Convert.ToInt32(Console.ReadLine());
             
             input += j;
-
             
             for(int i = 0 ; i <  j;  i++){
-            	
+				
                 Console.WriteLine("-------------------------------------------");
-            	Console.Write("no absen anggota ke : " );
+				Console.Write("no absen anggota ke : " );
                 MyGlobal[i].Id = Convert.ToInt16(Console.ReadLine());
                 Console.Write("Nama Anggota : ");
                 MyGlobal[i].Nama = Console.ReadLine();
                 Console.Write("Jenis Kelamin : " );
                 MyGlobal[i].Kelamin = Console.ReadLine();
                 Console.WriteLine("-------------------------------------------");
-        		
+
          	} //akhir mother for
 
             Console.WriteLine("\nPress Any Key To Select Other Menu");
@@ -147,19 +154,19 @@ namespace Project_Assessment_3
 
 //  --------------------------------------- awal function menampilkan anggota --------------------------------- 
 
-            public void Tampil_Mahasiswa(){
+        public void Tampil_Mahasiswa(){
 
-				for(int i = 0; i < input; i++){
-					Console.WriteLine("-------------------------------------------");
-            		Console.WriteLine(" Nomor absen mahasiswa ke : " + MyGlobal[i].Id);
-            		Console.WriteLine(" Namaa anggota : " + MyGlobal[i].Nama);
-            		Console.WriteLine(" Jenis Kelamin : " + MyGlobal[i].Kelamin);
-            		Console.WriteLine("-------------------------------------------");
-            		Console.WriteLine(input);
-				}
+			for(int i = 0; i < input; i++){
+				Console.WriteLine("-------------------------------------------");
+				Console.WriteLine(" Nomor absen mahasiswa ke : " + MyGlobal[i].Id);
+				Console.WriteLine(" Namaa anggota : " + MyGlobal[i].Nama);
+				Console.WriteLine(" Jenis Kelamin : " + MyGlobal[i].Kelamin);
+				Console.WriteLine("-------------------------------------------");
+				Console.WriteLine(input);
+			}
 
-				Console.WriteLine("\nPress Any Key To Select Other Menu");
-				Console.ReadKey();
+			Console.WriteLine("\nPress Any Key To Select Other Menu");
+			Console.ReadKey();
 
         }
 
@@ -169,52 +176,51 @@ namespace Project_Assessment_3
 
 //	 --------------------------------------- awal function menampilkan anggota --------------------------------- 
 
-            public void Cari_Mahasiswa(){
-	
-					int cari;
-					int ketemu = 0, posisi = 0;
-	
-				Console.Write("\n\nNomor absen mahasiswa yang akan dicari = ");
-				cari = Convert.ToInt32(Console.ReadLine());
+        public void Cari_Mahasiswa(){
 
-				for (int n = 0; n <= input; n++){
-				    if (cari == MyGlobal[n].Id){
-				    ketemu = 1;
-				    posisi = n;
-				
-				    
-				    Console.WriteLine(" mahasiswa dengan no absen ke {0} Ditemukan", cari);
-            		Console.WriteLine(" Nama Mahasiswa : " + MyGlobal[cari].Nama);
-            		Console.WriteLine(" Jenis Kelamin : " + MyGlobal[cari].Kelamin);
-				    }
+				int cari;
+				int ketemu = 0, posisi = 0;
+
+			Console.Write("\n\nNomor absen mahasiswa yang akan dicari = ");
+			cari = Convert.ToInt32(Console.ReadLine());
+
+			for (int n = 0; n <= input; n++){
+				if (cari == MyGlobal[n].Id){
+					ketemu = 1;
+					posisi = n;
+
+					Console.WriteLine(" mahasiswa dengan no absen ke {0} Ditemukan", cari);
+					Console.WriteLine(" Nama Mahasiswa : " + MyGlobal[cari].Nama);
+					Console.WriteLine(" Jenis Kelamin : " + MyGlobal[cari].Kelamin);
 				}
-				
-				if (ketemu == 0){
-				    Console.WriteLine("Maaf Data yang kamu cari tidak ada.");
-				}
-				
-				Console.WriteLine("\nPress Any Key To Select Other Menu");
-				Console.ReadKey();
+			}
+
+			if (ketemu == 0){
+				Console.WriteLine("Maaf Data yang kamu cari tidak ada.");
+			}
+
+			Console.WriteLine("\nPress Any Key To Select Other Menu");
+			Console.ReadKey();
 
         }
-        
+
 //   --------------------------------------- akhir function menampilkan anggota ---------------------------------
 
 
 
 //	 --------------------------------------- awal function menampilkan anggota --------------------------------- 
 
-            public void Hapus_Mahasiswa(){
+        public void Hapus_Mahasiswa(){
 
-				int hapus;
-					
-				Console.Write("\n\nMasukkan index data yang akan dihapus = ");
-                hapus = Convert.ToInt32(Console.ReadLine());
+			int hapus;
+				
+			Console.Write("\n\nMasukkan index data yang akan dihapus = ");
+			hapus = Convert.ToInt32(Console.ReadLine());
 
-                Array.Clear(MyGlobal, hapus, 1);
+			Array.Clear(MyGlobal, hapus, 1);
 
-					Console.ReadKey();
-                
+			Console.ReadKey();
+						
         }
 
 //   --------------------------------------- akhir function menampilkan anggota ---------------------------------
