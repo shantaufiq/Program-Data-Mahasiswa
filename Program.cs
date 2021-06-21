@@ -113,81 +113,89 @@ namespace Project_Assessment_3
 				Console.WriteLine(e.Message);
 				Console.WriteLine("you have to write a string data type");
 				Console.WriteLine("\nPress Any Key To Select Other Menu");
-						Console.ReadKey();
-						goto menu;
+				Console.ReadKey();
+				goto menu;
 			}
         } // -> akhir main program
 
-//  --------------------------------------- Akhir Main Program -----------------------------------------------
+//  !--------------------------------------- Akhir Main Program -----------------------------------------------!
 
 
 
-//  --------------------------------------- awal function tambah anggota -------------------------------------
+//  !--------------------------------------- awal function tambah anggota -------------------------------------!
 
         public void Tambah_Mahasiswa(){
+			Console.WriteLine("");
 
             int index;
 
             Console.Write("Berapa jumlah anggota yang akan anda input : ");
             int j = Convert.ToInt32(Console.ReadLine());
 
-			
             for(int i = 0 ; i < j;  i++){
-				Console.WriteLine("urutan jumlah yang diminta {0}", i);
+				// Console.WriteLine("urutan jumlah yang diminta {0}", i);
 				Console.WriteLine("-------------------------------------------");
 				Console.Write("Nomor absen mahasiswa ke : ");
 				index = Convert.ToInt32(Console.ReadLine());
-	
+
 				for (int k = 0; k <= MyGlobal.Length; k++)
 				{
 					if (index == k) {
 						
 						MyGlobal[index - 1].Id = index;
+						Console.WriteLine("");
 						Console.Write("Nama Anggota : ");
 						MyGlobal[index - 1].Nama = Console.ReadLine();
+						Console.WriteLine("");
 						Console.Write("Jenis Kelamin : " );
 						MyGlobal[index - 1].Kelamin = Console.ReadLine();
 						MyGlobal[index - 1].terisi = 1;
-						Console.WriteLine("-----------------"+k+"----------------------");
-	                
+						Console.WriteLine("--------------------------------------------");
+
 					}
 				}	
-			}
-            Console.WriteLine("\nSuccesfully Saved ! \nPress Any Key To Select Other Menu");
+			} // -> akhir mother for
+
+            Console.WriteLine("\n***** Succesfully Saved ! *****");
+			Console.WriteLine("");
+            Console.WriteLine("\nPress Any Key To Select Other Menu");
             Console.ReadKey();
             
         }
         
-//  --------------------------------------- akhir function tambah anggota -------------------------------------
+//  !--------------------------------------- akhir function tambah anggota -------------------------------------!
 
 
 
-//  --------------------------------------- awal function menampilkan anggota --------------------------------- 
+//  !--------------------------------------- awal function menampilkan anggota ---------------------------------! 
 
         public void Tampil_Mahasiswa(){
+			Console.WriteLine("");
 
+			
 			for(int i = 0; i < MyGlobal.Length; i++){
 
 				if(MyGlobal[i].terisi == 1){
 					Console.WriteLine("-------------------------------------------");
 					Console.WriteLine(" Nomor absen mahasiswa ke : " + MyGlobal[i].Id);
+					Console.WriteLine("");
 					Console.WriteLine(" Namaa anggota : " + MyGlobal[i].Nama);
+					Console.WriteLine("");
 					Console.WriteLine(" Jenis Kelamin : " + MyGlobal[i].Kelamin);
 					Console.WriteLine("-------------------------------------------");
-					Console.WriteLine(MyGlobal.Length);
 				};
 			}
-
+			Console.WriteLine("");
 			Console.WriteLine("\nPress Any Key To Select Other Menu");
 			Console.ReadKey();
 
         }
 
-//   --------------------------------------- akhir function menampilkan anggota ---------------------------------
+//   !--------------------------------------- akhir function menampilkan anggota ---------------------------------!
 
 
 
-//	 --------------------------------------- awal function menampilkan anggota --------------------------------- 
+//	 !--------------------------------------- awal function menampilkan anggota ---------------------------------! 
 
         public void Cari_Mahasiswa(){
 
@@ -203,15 +211,17 @@ namespace Project_Assessment_3
 					posisi = n;
 
 					Console.WriteLine("-------------------------------------------");
-					Console.WriteLine(" mahasiswa dengan no absen ke-{0} Ditemukan", MyGlobal[cari-1].Id);
+					Console.WriteLine(" Mahasiswa dengan no absen ke-{0} Ditemukan", MyGlobal[cari-1].Id);
+					Console.WriteLine("");
 					Console.WriteLine(" Nama Mahasiswa : " + MyGlobal[cari-1].Nama);
+					Console.WriteLine("");
 					Console.WriteLine(" Jenis Kelamin : " + MyGlobal[cari-1].Kelamin);
 					Console.WriteLine("-------------------------------------------");
 				}
 			}
 
 			if (ketemu == 0){
-				Console.WriteLine("Maaf Data yang kamu cari tidak ada.");
+				Console.WriteLine("Sorry, the data you are looking for does not exist.");
 			}
 
 			Console.WriteLine("\nPress Any Key To Select Other Menu");
@@ -219,21 +229,21 @@ namespace Project_Assessment_3
 
         }
 
-//   --------------------------------------- akhir function menampilkan anggota ---------------------------------
+//   !--------------------------------------- akhir function menampilkan anggota ---------------------------------!
 
 
 
-//	 --------------------------------------- awal function menampilkan anggota --------------------------------- 
+//	 !--------------------------------------- awal function menampilkan anggota ---------------------------------! 
 
         public void Hapus_Mahasiswa(){
-
+			Console.WriteLine("");
 			string hapus;
 			int cari;
 			int ketemu = 0, posisi = 0;
 
 			//! mencari mahasiswa mana yang akan dihapus
 
-			Console.Write("\n\nNomor absen mahasiswa yang akan anda hapus = ");
+			Console.Write("Nomor absen mahasiswa yang akan anda hapus = ");
 			cari = Convert.ToInt32(Console.ReadLine());
 
 			for (int n = 0; n < MyGlobal.Length; n++){
@@ -242,8 +252,10 @@ namespace Project_Assessment_3
 					posisi = n;
 
 					Console.WriteLine("-------------------------------------------");
-					Console.WriteLine(" mahasiswa dengan no absen ke-{0} Ditemukan", MyGlobal[cari-1].Id);
+					Console.WriteLine(" Mahasiswa dengan no absen ke-{0} ", MyGlobal[cari-1].Id);
+					Console.WriteLine("");
 					Console.WriteLine(" Nama Mahasiswa : " + MyGlobal[cari-1].Nama);
+					Console.WriteLine("");
 					Console.WriteLine(" Jenis Kelamin : " + MyGlobal[cari-1].Kelamin);
 					Console.WriteLine("-------------------------------------------");
 					Console.WriteLine("");
@@ -260,12 +272,14 @@ namespace Project_Assessment_3
 
 			Benerin:
 
-			Console.Write("are you sure want to delete this person? -> yes or no : ");
+			Console.Write("Are you sure want to delete this person? -> yes or no : ");
 			hapus = Console.ReadLine();
+			Console.WriteLine("");
 
 			if(hapus == "yes"){
 				Array.Clear(MyGlobal, cari - 1, 1);
-				Console.WriteLine("Mahasiswa has been deleted");
+				Console.WriteLine("");
+				Console.WriteLine("***** Mahasiswa has been deleted *****");
 				Console.WriteLine("\nPress Any Key To Select Other Menu");
 				Console.ReadKey();
 			} else if (hapus == "no"){
@@ -273,19 +287,17 @@ namespace Project_Assessment_3
 				Console.ReadKey();
 			} else {
 				Console.WriteLine("");
-				Console.WriteLine("please choose 'yes' or 'no'");
+				Console.WriteLine("Please choose 'yes' or 'no'");
 				Console.WriteLine("");
 				Console.WriteLine("-------------****---------------");
 				Console.WriteLine("");
 				goto Benerin;
 			}
-
 				//! akhir section menanyakan yes or no
 
-						
         }
 
-//   --------------------------------------- akhir function menampilkan anggota ---------------------------------
+//   !--------------------------------------- akhir function menampilkan anggota ---------------------------------!
 
 
     }
