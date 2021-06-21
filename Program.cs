@@ -9,6 +9,7 @@ namespace Project_Assessment_3
 			public string Kelamin;
 			public string Nama;
 			public int Id;
+			public int terisi;
             
 		}        
 		
@@ -125,25 +126,34 @@ namespace Project_Assessment_3
 
         public void Tambah_Mahasiswa(){
 
+            int index;
+
             Console.Write("Berapa jumlah anggota yang akan anda input : ");
             int j = Convert.ToInt32(Console.ReadLine());
-            
-            input += j;
-            
-            for(int i = 0 ; i <  j;  i++){
-				
-                Console.WriteLine("-------------------------------------------");
-				Console.Write("no absen anggota ke : " );
-                MyGlobal[i].Id = Convert.ToInt16(Console.ReadLine());
-                Console.Write("Nama Anggota : ");
-                MyGlobal[i].Nama = Console.ReadLine();
-                Console.Write("Jenis Kelamin : " );
-                MyGlobal[i].Kelamin = Console.ReadLine();
-                Console.WriteLine("-------------------------------------------");
 
-         	} //akhir mother for
-
-            Console.WriteLine("\nPress Any Key To Select Other Menu");
+			
+            for(int i = 0 ; i < j;  i++){
+				Console.WriteLine("urutan jumlah yang diminta {0}", i);
+				Console.WriteLine("-------------------------------------------");
+				Console.Write("Nomor absen mahasiswa ke : ");
+				index = Convert.ToInt32(Console.ReadLine());
+	
+				for (int k = 0; k <= MyGlobal.Length; k++)
+				{
+					if (index == k) {
+						
+						MyGlobal[index - 1].Id = index;
+						Console.Write("Nama Anggota : ");
+						MyGlobal[index - 1].Nama = Console.ReadLine();
+						Console.Write("Jenis Kelamin : " );
+						MyGlobal[index - 1].Kelamin = Console.ReadLine();
+						MyGlobal[index - 1].terisi = 1;
+						Console.WriteLine("-----------------"+k+"----------------------");
+	                
+					}
+				}	
+			}
+            Console.WriteLine("\nSuccesfully Saved ! \nPress Any Key To Select Other Menu");
             Console.ReadKey();
             
         }
@@ -156,13 +166,13 @@ namespace Project_Assessment_3
 
         public void Tampil_Mahasiswa(){
 
-			for(int i = 0; i < input; i++){
+			for(int i = 0; i < MyGlobal.Length; i++){
 				Console.WriteLine("-------------------------------------------");
 				Console.WriteLine(" Nomor absen mahasiswa ke : " + MyGlobal[i].Id);
 				Console.WriteLine(" Namaa anggota : " + MyGlobal[i].Nama);
 				Console.WriteLine(" Jenis Kelamin : " + MyGlobal[i].Kelamin);
 				Console.WriteLine("-------------------------------------------");
-				Console.WriteLine(input);
+				Console.WriteLine(MyGlobal.Length);
 			}
 
 			Console.WriteLine("\nPress Any Key To Select Other Menu");
@@ -184,14 +194,16 @@ namespace Project_Assessment_3
 			Console.Write("\n\nNomor absen mahasiswa yang akan dicari = ");
 			cari = Convert.ToInt32(Console.ReadLine());
 
-			for (int n = 0; n <= input; n++){
-				if (cari == MyGlobal[n].Id){
+			for (int n = 0; n < MyGlobal.Length; n++){
+				if (cari == MyGlobal[n].Id && MyGlobal[cari-1].terisi == 1){
 					ketemu = 1;
 					posisi = n;
 
-					Console.WriteLine(" mahasiswa dengan no absen ke {0} Ditemukan", cari);
-					Console.WriteLine(" Nama Mahasiswa : " + MyGlobal[cari].Nama);
-					Console.WriteLine(" Jenis Kelamin : " + MyGlobal[cari].Kelamin);
+					Console.WriteLine("-------------------------------------------");
+					Console.WriteLine(" mahasiswa dengan no absen ke-{0} Ditemukan", MyGlobal[cari-1].Id);
+					Console.WriteLine(" Nama Mahasiswa : " + MyGlobal[cari-1].Nama);
+					Console.WriteLine(" Jenis Kelamin : " + MyGlobal[cari-1].Kelamin);
+					Console.WriteLine("-------------------------------------------");
 				}
 			}
 
@@ -211,7 +223,6 @@ namespace Project_Assessment_3
 //	 --------------------------------------- awal function menampilkan anggota --------------------------------- 
 
         public void Hapus_Mahasiswa(){
-
 			int hapus;
 				
 			Console.Write("\n\nMasukkan index data yang akan dihapus = ");
