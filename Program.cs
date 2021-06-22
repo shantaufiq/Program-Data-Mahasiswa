@@ -34,16 +34,19 @@ namespace Project_Assessment_3
                 Console.WriteLine("      ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
                 Console.WriteLine("      |               	PROGRAM DAFTAR ABSEN MAHASISWA                       |");
                 Console.WriteLine("      |                    	KELAS D4SM-44-03                             |");
+				Console.WriteLine("      |              		                                             |");
                 Console.WriteLine("      |           KELOMPOK :	1. MUHAMMAD TAUFIQ SHIDIQ                    |");
                 Console.WriteLine("      |              		2. muhammad Ainur Rafiq                      |");
-                Console.WriteLine("      |              		3. Muhammad Gilang Radhitya Permana          |");
+                Console.WriteLine("      |              		                                             |");
                 Console.WriteLine("      |              			                                     |");
                 Console.WriteLine("      |              Ketikan Angk Untuk Memilih Salah 1 Menu                 |");
                 Console.WriteLine("      |_____________________________________________________________________ |");
+				Console.WriteLine("      |              		                                             |");
                 Console.WriteLine("      | 1. Menambahkan Data Mahasiswa / ubah data                 	     |");
                 Console.WriteLine("      | 2. Menampilkan Data Mahasiswa      				     |");
                 Console.WriteLine("      | 3. Mencari Data Mahasiswa      				             |");
                 Console.WriteLine("      | 4. Menghapus Data Mahasiswa     			             |");
+				Console.WriteLine("      |              		                                             |");
                 Console.WriteLine("      |>>>>>>>>>>>>>>>>>>>>>>>  0. Exit or Back  <<<<<<<<<<<<<<<<<<<<<<<<<<<<|");
 
             try {
