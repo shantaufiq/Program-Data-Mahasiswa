@@ -138,7 +138,7 @@ namespace Project_Assessment_3
 				Console.Write("Nomor absen mahasiswa ke : ");
 				index = Convert.ToInt32(Console.ReadLine());
 
-				for (int k = 0; k < MyGlobal.Length; k++)
+				for (int k = 0; k <= MyGlobal.Length; k++)
 				{
 					if (index == k) {
 						
