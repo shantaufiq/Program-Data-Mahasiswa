@@ -17,9 +17,9 @@ namespace Project_Assessment_3
             
 		}        
 		
-        static Mahasiswa[] MyGlobal = new Mahasiswa[10]; // deklarasi variabel array gelobal
+        static Mahasiswa[] MyGlobal = new Mahasiswa[10]; //? deklarasi variabel array gelobal
 
-//  --------------------------------------- Awal Main Program -----------------------------------------------
+//  !--------------------------------------- Awal Main Program -----------------------------------------------!
         
         public static void Main(string[] args)
         {
@@ -111,7 +111,7 @@ namespace Project_Assessment_3
 					
 			}catch (Exception e) {
 				Console.WriteLine(e.Message);
-				Console.WriteLine("you have to write a string data type");
+				Console.WriteLine("you have to write a integer data type");
 				Console.WriteLine("\nPress Any Key To Select Other Menu");
 				Console.ReadKey();
 				goto menu;
@@ -138,7 +138,7 @@ namespace Project_Assessment_3
 				Console.Write("Nomor absen mahasiswa ke : ");
 				index = Convert.ToInt32(Console.ReadLine());
 
-				for (int k = 0; k <= MyGlobal.Length; k++)
+				for (int k = 0; k < MyGlobal.Length; k++)
 				{
 					if (index == k) {
 						
@@ -210,14 +210,14 @@ namespace Project_Assessment_3
 
 
 
-//	 !--------------------------------------- awal function menampilkan anggota ---------------------------------! 
+//	 !--------------------------------------- awal function mencari anggota ---------------------------------! 
 
         public void Cari_Mahasiswa(){
 
 				int cari;
 				int ketemu = 0, posisi = 0;
 
-			Console.Write("\n\nNomor absen mahasiswa yang akan dicari = ");
+			Console.Write("\n\nMasukkan nomor absen mahasiswa yang akan dicari = ");
 			cari = Convert.ToInt32(Console.ReadLine());
 
 			for (int n = 0; n < MyGlobal.Length; n++){
@@ -252,11 +252,11 @@ namespace Project_Assessment_3
 
         }
 
-//   !--------------------------------------- akhir function menampilkan anggota ---------------------------------!
+//   !--------------------------------------- akhir function mencari anggota ---------------------------------!
 
 
 
-//	 !--------------------------------------- awal function menampilkan anggota ---------------------------------! 
+//	 !--------------------------------------- awal function menghapus anggota ---------------------------------! 
 
         public void Hapus_Mahasiswa(){
 			Console.WriteLine("");
@@ -329,7 +329,7 @@ namespace Project_Assessment_3
 
         }
 
-//   !--------------------------------------- akhir function menampilkan anggota ---------------------------------!
+//   !--------------------------------------- akhir function menghapus anggota ---------------------------------!
 
 
     }
