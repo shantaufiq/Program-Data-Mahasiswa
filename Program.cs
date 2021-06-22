@@ -32,6 +32,7 @@ namespace Project_Assessment_3
                 menu : //goto balik ke menu utama
                 Console.Clear();
                 Console.WriteLine("      ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
+				Console.WriteLine("      |              		                                             |");
                 Console.WriteLine("      |               	PROGRAM DAFTAR ABSEN MAHASISWA                       |");
                 Console.WriteLine("      |                    	KELAS D4SM-44-03                             |");
 				Console.WriteLine("      |              		                                             |");
@@ -39,15 +40,15 @@ namespace Project_Assessment_3
                 Console.WriteLine("      |              		2. muhammad Ainur Rafiq                      |");
                 Console.WriteLine("      |              		                                             |");
                 Console.WriteLine("      |              			                                     |");
-                Console.WriteLine("      |              Ketikan Angk Untuk Memilih Salah 1 Menu                 |");
+                Console.WriteLine("      |              Ketikkan Angka untuk Memilih Salah Satu Menu            |");
                 Console.WriteLine("      |_____________________________________________________________________ |");
 				Console.WriteLine("      |              		                                             |");
-                Console.WriteLine("      | 1. Menambahkan Data Mahasiswa / ubah data                 	     |");
+                Console.WriteLine("      | 1. Menambahkan Data Mahasiswa / Ubah Data                 	     |");
                 Console.WriteLine("      | 2. Menampilkan Data Mahasiswa      				     |");
                 Console.WriteLine("      | 3. Mencari Data Mahasiswa      				             |");
                 Console.WriteLine("      | 4. Menghapus Data Mahasiswa     			             |");
 				Console.WriteLine("      |              		                                             |");
-                Console.WriteLine("      |>>>>>>>>>>>>>>>>>>>>>>>  0. Exit or Back  <<<<<<<<<<<<<<<<<<<<<<<<<<<<|");
+                Console.WriteLine("      |>>>>>>>>>>>>>>>>>>>>>>>>>  0. Exit or Back  <<<<<<<<<<<<<<<<<<<<<<<<<<|");
 
             try {
 			Console.Write("\nInsert Number Of Menu : ");
@@ -81,7 +82,7 @@ namespace Project_Assessment_3
 							case "yes" :
 								Console.WriteLine("-------------------------****-------------------------");
 								Console.WriteLine("");
-								Console.WriteLine("************DO YOUR BEST AND THANK YOU***************");
+								Console.WriteLine("************ DO YOUR BEST AND THANK YOU **************");
 								Console.WriteLine("");
 								Console.WriteLine("-------------------------****-------------------------");
 								Console.WriteLine("");
@@ -90,7 +91,7 @@ namespace Project_Assessment_3
 								goto menu;
 							default :
 								Console.WriteLine("");
-								Console.WriteLine("please choose 'yes' or 'no'");
+								Console.WriteLine("Please choose 'yes' or 'no'");
 								Console.WriteLine("");
 								Console.WriteLine("-------------****---------------");
 								Console.WriteLine("");
@@ -103,7 +104,7 @@ namespace Project_Assessment_3
 								
 					default:
 						if (masukan < 0 || masukan > 4){
-							Console.WriteLine("you just entered {0} which is a wrong value", masukan);
+							Console.WriteLine("You just entered {0} which is a wrong value", masukan);
 						}
 
 						Console.WriteLine("\nPress Any Key To Exit");
@@ -114,7 +115,7 @@ namespace Project_Assessment_3
 					
 			}catch (Exception e) {
 				Console.WriteLine(e.Message);
-				Console.WriteLine("you have to write a integer data type");
+				Console.WriteLine("You have to write a integer data type");
 				Console.WriteLine("\nPress Any Key To Select Other Menu");
 				Console.ReadKey();
 				goto menu;
@@ -125,7 +126,7 @@ namespace Project_Assessment_3
 
 
 
-//  !--------------------------------------- awal function tambah anggota -------------------------------------!
+//  !--------------------------------------- awal function tambah Mahasiswa -------------------------------------!
 
         public void Tambah_Mahasiswa(){
 			Console.WriteLine("");
@@ -138,7 +139,7 @@ namespace Project_Assessment_3
             for(int i = 0 ; i < j;  i++){
 				// Console.WriteLine("urutan index array {0}", i);
 				Console.WriteLine("-------------------------------------------");
-				Console.Write("Nomor absen mahasiswa ke : ");
+				Console.Write("Masukan Nomor absen mahasiswa ke : ");
 				index = Convert.ToInt32(Console.ReadLine());
 
 				for (int k = 0; k <= MyGlobal.Length; k++)
@@ -147,16 +148,16 @@ namespace Project_Assessment_3
 						
 						MyGlobal[index - 1].Id = index;
 						Console.WriteLine("");
-						Console.Write("Nama Anggota : ");
+						Console.Write("Masukan nama Mahasiswa : ");
 						MyGlobal[index - 1].Nama = Console.ReadLine();
 						Console.WriteLine("");
-						Console.Write("Jenis Kelamin : " );
+						Console.Write("Masukan jenis Kelamin : " );
 						MyGlobal[index - 1].Kelamin = Console.ReadLine();
 						Console.WriteLine("");
-						Console.Write("Jumlah nilai tugas : ");
+						Console.Write("Masukan jumlah nilai tugas : ");
 						MyGlobal[index - 1].ntugas = Convert.ToInt32(Console.ReadLine());
 						Console.WriteLine("");
-						Console.Write("Jumlah nilai ujian : ");
+						Console.Write("Masukan jumlah nilai ujian : ");
 						MyGlobal[index - 1].nujian = Convert.ToInt32(Console.ReadLine());
 						MyGlobal[index - 1].ntotal = MyGlobal[index - 1 ].ntugas + MyGlobal[index - 1 ].nujian;
 						MyGlobal[index - 1].nratarata = MyGlobal[index - 1].ntotal / 2;
@@ -178,7 +179,7 @@ namespace Project_Assessment_3
 
 
 
-//  !--------------------------------------- awal function menampilkan anggota ---------------------------------! 
+//  !--------------------------------------- awal function menampilkan Mahasiswa ---------------------------------! 
 
         public void Tampil_Mahasiswa(){
 			Console.WriteLine("");
@@ -189,7 +190,7 @@ namespace Project_Assessment_3
 					Console.WriteLine("-------------------------------------------");
 					Console.WriteLine(" Nomor absen mahasiswa ke : " + MyGlobal[i].Id);
 					Console.WriteLine("");
-					Console.WriteLine(" Namaa anggota : " + MyGlobal[i].Nama);
+					Console.WriteLine(" Namaa Mahasiswa : " + MyGlobal[i].Nama);
 					Console.WriteLine("");
 					Console.WriteLine(" Jenis Kelamin : " + MyGlobal[i].Kelamin);
 					Console.WriteLine("");
@@ -209,18 +210,18 @@ namespace Project_Assessment_3
 
         }
 
-//   !--------------------------------------- akhir function menampilkan anggota ---------------------------------!
+//   !--------------------------------------- akhir function menampilkan Mahasiswa ---------------------------------!
 
 
 
-//	 !--------------------------------------- awal function mencari anggota ---------------------------------! 
+//	 !--------------------------------------- awal function mencari Mahasiswa ---------------------------------! 
 
         public void Cari_Mahasiswa(){
 
 				int cari;
 				int ketemu = 0, posisi = 0;
 
-			Console.Write("\n\nMasukkan nomor absen mahasiswa yang akan dicari = ");
+			Console.Write("\n\nMasukan nomor absen mahasiswa yang akan dicari = ");
 			cari = Convert.ToInt32(Console.ReadLine());
 
 			for (int n = 0; n < MyGlobal.Length; n++){
@@ -255,11 +256,11 @@ namespace Project_Assessment_3
 
         }
 
-//   !--------------------------------------- akhir function mencari anggota ---------------------------------!
+//   !--------------------------------------- akhir function mencari Mahasiswa ---------------------------------!
 
 
 
-//	 !--------------------------------------- awal function menghapus anggota ---------------------------------! 
+//	 !--------------------------------------- awal function menghapus Mahasiswa ---------------------------------! 
 
         public void Hapus_Mahasiswa(){
 			Console.WriteLine("");
@@ -297,7 +298,7 @@ namespace Project_Assessment_3
 			}
 
 			if (ketemu == 0){
-				Console.WriteLine("Maaf Data yang kamu cari tidak ada.");
+				Console.WriteLine("Sorry, the data you are looking for does not exist.");
 			}
 				
 		//? mencari mahasiswa mana yang akan dihapus
@@ -332,7 +333,7 @@ namespace Project_Assessment_3
 
         }
 
-//   !--------------------------------------- akhir function menghapus anggota ---------------------------------!
+//   !--------------------------------------- akhir function menghapus Mahasiswa ---------------------------------!
 
 
     }
