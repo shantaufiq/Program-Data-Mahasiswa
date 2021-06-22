@@ -6,19 +6,18 @@ namespace Project_Assessment_3
     {
         struct Mahasiswa
 		{
-			public string Kelamin;
-			public string Nama;
 			public int Id;
+			public string Nama;
+			public string Kelamin;
+			public int ntugas;
+			public int nujian;
+			public double ntotal;
+			public double nratarata;
 			public int terisi;
             
 		}        
 		
-        static Mahasiswa[] MyGlobal = new Mahasiswa[10]; //variabel array gelobal
-        
-        int input; //mengecheck jumlah length variabel array gelobal
-        
-        
-        
+        static Mahasiswa[] MyGlobal = new Mahasiswa[10]; // deklarasi variabel array gelobal
 
 //  --------------------------------------- Awal Main Program -----------------------------------------------
         
@@ -46,6 +45,7 @@ namespace Project_Assessment_3
                 Console.WriteLine("      | 3. Mencari Data Mahasiswa      				             |");
                 Console.WriteLine("      | 4. Menghapus Data Mahasiswa     			             |");
                 Console.WriteLine("      |>>>>>>>>>>>>>>>>>>>>>>>  0. Exit or Back  <<<<<<<<<<<<<<<<<<<<<<<<<<<<|");
+
             try {
 			Console.Write("\nInsert Number Of Menu : ");
 			masukan = Convert.ToInt32(Console.ReadLine());
@@ -149,6 +149,14 @@ namespace Project_Assessment_3
 						Console.WriteLine("");
 						Console.Write("Jenis Kelamin : " );
 						MyGlobal[index - 1].Kelamin = Console.ReadLine();
+						Console.WriteLine("");
+						Console.Write("Jumlah nilai tugas : ");
+						MyGlobal[index - 1].ntugas = Convert.ToInt32(Console.ReadLine());
+						Console.WriteLine("");
+						Console.Write("Jumlah nilai ujian : ");
+						MyGlobal[index - 1].nujian = Convert.ToInt32(Console.ReadLine());
+						MyGlobal[index - 1].ntotal = MyGlobal[index - 1 ].ntugas + MyGlobal[index - 1 ].nujian;
+						MyGlobal[index - 1].nratarata = MyGlobal[index - 1].ntotal / 2;
 						MyGlobal[index - 1].terisi = 1;
 						Console.WriteLine("--------------------------------------------");
 
@@ -171,7 +179,6 @@ namespace Project_Assessment_3
 
         public void Tampil_Mahasiswa(){
 			Console.WriteLine("");
-
 			
 			for(int i = 0; i < MyGlobal.Length; i++){
 
@@ -182,6 +189,12 @@ namespace Project_Assessment_3
 					Console.WriteLine(" Namaa anggota : " + MyGlobal[i].Nama);
 					Console.WriteLine("");
 					Console.WriteLine(" Jenis Kelamin : " + MyGlobal[i].Kelamin);
+					Console.WriteLine("");
+					Console.WriteLine(" Jumlah nilai tugas : " + MyGlobal[i].ntugas);
+					Console.WriteLine("");
+					Console.WriteLine(" Jumlah nilai ujian : " + MyGlobal[i].nujian);
+					Console.WriteLine("");
+					Console.WriteLine(" Jumlah nilai rata - rata : " + MyGlobal[i].nratarata);
 					Console.WriteLine("-------------------------------------------");
 				};
 			}
@@ -216,6 +229,12 @@ namespace Project_Assessment_3
 					Console.WriteLine(" Nama Mahasiswa : " + MyGlobal[cari-1].Nama);
 					Console.WriteLine("");
 					Console.WriteLine(" Jenis Kelamin : " + MyGlobal[cari-1].Kelamin);
+					Console.WriteLine("");
+					Console.WriteLine(" Jumlah nilai tugas : " + MyGlobal[cari-1].ntugas);
+					Console.WriteLine("");
+					Console.WriteLine(" Jumlah nilai ujian : " + MyGlobal[cari-1].nujian);
+					Console.WriteLine("");
+					Console.WriteLine(" Jumlah nilai rata - rata : " + MyGlobal[cari-1].nratarata);
 					Console.WriteLine("-------------------------------------------");
 				}
 			}
@@ -257,6 +276,12 @@ namespace Project_Assessment_3
 					Console.WriteLine(" Nama Mahasiswa : " + MyGlobal[cari-1].Nama);
 					Console.WriteLine("");
 					Console.WriteLine(" Jenis Kelamin : " + MyGlobal[cari-1].Kelamin);
+					Console.WriteLine("");
+					Console.WriteLine(" Jumlah nilai tugas : " + MyGlobal[cari-1].ntugas);
+					Console.WriteLine("");
+					Console.WriteLine(" Jumlah nilai ujian : " + MyGlobal[cari-1].nujian);
+					Console.WriteLine("");
+					Console.WriteLine(" Jumlah nilai rata - rata : " + MyGlobal[cari-1].nratarata);
 					Console.WriteLine("-------------------------------------------");
 					Console.WriteLine("");
 				}
@@ -268,9 +293,9 @@ namespace Project_Assessment_3
 				
 				//! mencari mahasiswa mana yang akan dihapus
 
-				//! akhir section menanyakan yes or no -> eksekusi atau tidak
+				//! awal section menanyakan yes or no -> eksekusi atau tidak
 
-			Benerin:
+			Benerin: // awal menanyakan yes or no
 
 			Console.Write("Are you sure want to delete this person? -> yes or no : ");
 			hapus = Console.ReadLine();
