@@ -71,7 +71,7 @@ namespace Project_Assessment_3
 					case 0:
 					Benerin:
 
-						Console.Write("are you sure want to quit? -> yes or no : ");
+						Console.Write("are you sure want to quit this aplication? -> yes or no : ");
 						String jawaban = Console.ReadLine();
 
 						switch(jawaban){
@@ -92,7 +92,7 @@ namespace Project_Assessment_3
 								Console.WriteLine("-------------****---------------");
 								Console.WriteLine("");
 								goto Benerin;
-						}
+						} // -> program menanyakan keluar
 
 						Console.WriteLine("\nPress Any Key To Exit");
 						Console.ReadKey();
@@ -133,7 +133,7 @@ namespace Project_Assessment_3
             int j = Convert.ToInt32(Console.ReadLine());
 
             for(int i = 0 ; i < j;  i++){
-				// Console.WriteLine("urutan jumlah yang diminta {0}", i);
+				// Console.WriteLine("urutan index array {0}", i);
 				Console.WriteLine("-------------------------------------------");
 				Console.Write("Nomor absen mahasiswa ke : ");
 				index = Convert.ToInt32(Console.ReadLine());
@@ -196,8 +196,10 @@ namespace Project_Assessment_3
 					Console.WriteLine("");
 					Console.WriteLine(" Jumlah nilai rata - rata : " + MyGlobal[i].nratarata);
 					Console.WriteLine("-------------------------------------------");
-				};
+				}
+
 			}
+
 			Console.WriteLine("");
 			Console.WriteLine("\nPress Any Key To Select Other Menu");
 			Console.ReadKey();
@@ -235,8 +237,10 @@ namespace Project_Assessment_3
 					Console.WriteLine(" Jumlah nilai ujian : " + MyGlobal[cari-1].nujian);
 					Console.WriteLine("");
 					Console.WriteLine(" Jumlah nilai rata - rata : " + MyGlobal[cari-1].nratarata);
+					Console.WriteLine("");
 					Console.WriteLine("-------------------------------------------");
 				}
+
 			}
 
 			if (ketemu == 0){
@@ -260,12 +264,13 @@ namespace Project_Assessment_3
 			int cari;
 			int ketemu = 0, posisi = 0;
 
-			//! mencari mahasiswa mana yang akan dihapus
+		//? mencari mahasiswa mana yang akan dihapus
 
 			Console.Write("Nomor absen mahasiswa yang akan anda hapus = ");
 			cari = Convert.ToInt32(Console.ReadLine());
 
 			for (int n = 0; n < MyGlobal.Length; n++){
+
 				if (cari == MyGlobal[n].Id && MyGlobal[cari-1].terisi == 1){
 					ketemu = 1;
 					posisi = n;
@@ -285,15 +290,16 @@ namespace Project_Assessment_3
 					Console.WriteLine("-------------------------------------------");
 					Console.WriteLine("");
 				}
+
 			}
 
 			if (ketemu == 0){
 				Console.WriteLine("Maaf Data yang kamu cari tidak ada.");
 			}
 				
-				//! mencari mahasiswa mana yang akan dihapus
+		//? mencari mahasiswa mana yang akan dihapus
 
-				//! awal section menanyakan yes or no -> eksekusi atau tidak
+		//? awal section menanyakan yes or no -> eksekusi atau tidak
 
 			Benerin: // awal menanyakan yes or no
 
@@ -318,7 +324,8 @@ namespace Project_Assessment_3
 				Console.WriteLine("");
 				goto Benerin;
 			}
-				//! akhir section menanyakan yes or no
+
+		//? akhir section menanyakan yes or no
 
         }
 
