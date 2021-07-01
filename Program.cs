@@ -23,21 +23,54 @@ namespace Project_Assessment_3
         
         public static void Main(string[] args)
         {
-            
-			Program p = new Program();
+            Program p = new Program();
 			
-			int masukan;
-			// string pilih;
+			
+			string username;
+			string password;
+
+			// ?-> menu login
+			login :
+				Console.Clear();
+				Console.WriteLine("      >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+				Console.WriteLine("      |              		                                             |");
+                Console.WriteLine("      |               	PROGRAM DAFTAR ABSEN MAHASISWA                       |");
+                Console.WriteLine("      |                    	KELAS D4SM-44-03                             |");
+				Console.WriteLine("      |              		                                             |");
+				Console.WriteLine("      |              		                                             |");
+				Console.Write("             Masukkan username : ");
+				username = Console.ReadLine();
+				Console.Write("             Masukkan password : ");
+				password = Console.ReadLine();
+
+			if ( username == "admin" && password == "admin123"){
+				goto menu;
+			} else {
+					Console.WriteLine("");
+					Console.WriteLine("                    ------------------****---------------------");
+					Console.WriteLine("");
+					Console.WriteLine("                   you entered the wrong username and password");		
+					Console.WriteLine("");		
+					Console.WriteLine("                    ------------------****---------------------");
+					Console.WriteLine("");
+					Console.WriteLine("                      Press Any Key for input a great password");
+					Console.WriteLine("");
+					Console.ReadKey();
+				goto login;
+			}
+				// ?-> akhir menu login
+			
                 
-                menu : //goto balik ke menu utama
+                menu : //?-> goto balik ke menu utama
                 Console.Clear();
                 Console.WriteLine("      ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
 				Console.WriteLine("      |              		                                             |");
                 Console.WriteLine("      |               	PROGRAM DAFTAR ABSEN MAHASISWA                       |");
                 Console.WriteLine("      |                    	KELAS D4SM-44-03                             |");
 				Console.WriteLine("      |              		                                             |");
-                Console.WriteLine("      |           KELOMPOK :	1. MUHAMMAD TAUFIQ SHIDIQ                    |");
-                Console.WriteLine("      |              		2. muhammad Ainur Rafiq                      |");
+                Console.WriteLine("      |           KELOMPOK :	1. Muhammad Taufiq Shidiq                    |");
+                Console.WriteLine("      |              		2. Muhammad Ainur Rafiq                      |");
+				Console.WriteLine("      |           		3. Muhammad Gilang                           |");
                 Console.WriteLine("      |              		                                             |");
                 Console.WriteLine("      |              			                                     |");
                 Console.WriteLine("      |              Ketikkan Angka untuk Memilih Salah Satu Menu            |");
@@ -50,36 +83,38 @@ namespace Project_Assessment_3
 				Console.WriteLine("      |              		                                             |");
                 Console.WriteLine("      |>>>>>>>>>>>>>>>>>>>>>>>>>  0. Exit or Back  <<<<<<<<<<<<<<<<<<<<<<<<<<|");
 
-            try {
+            try { //* digunakan untuk ngecheck apakah benar atau tidak inputan dari user
+
 			Console.Write("\nInsert Number Of Menu : ");
-			masukan = Convert.ToInt32(Console.ReadLine());
+			int masukan = Convert.ToInt32(Console.ReadLine());
 			
 			switch(masukan)
 				{
 					case 1:
-						p.Tambah_Mahasiswa();
+						p.Tambah_Mahasiswa(); //* memanggil fungsi tambah dan ubah mahasiswa
 						goto menu;
 						
 					case 2:
-						p.Tampil_Mahasiswa();
+						p.Tampil_Mahasiswa(); //* memanggil fungsi yang digunakan untuk menampilkan data mahasiswa yang sudah diinpitkan
 						goto menu;
 						
 					case 3:
-						p.Cari_Mahasiswa();
+						p.Cari_Mahasiswa(); //* memanggil fungsi yang digunakan untuk mencari
 						goto menu;
 						
 					case 4:
-						p.Hapus_Mahasiswa();
+						p.Hapus_Mahasiswa(); //* memanggil fungsi yang digunakan untuk menghapus
 						goto menu;
 						
-					case 0:
+					case 0: //* digunakan padasaat user ingin keluar dari aplikasi
 					Benerin:
 
 						Console.Write("are you sure want to quit this aplication? -> yes or no : ");
 						String jawaban = Console.ReadLine();
 
 						switch(jawaban){
-							case "yes" :
+							case "yes" : 
+								//* apabila user yakin untuk keluar dari aplikasi
 								Console.WriteLine("-------------------------****-------------------------");
 								Console.WriteLine("");
 								Console.WriteLine("************ DO YOUR BEST AND THANK YOU **************");
@@ -90,6 +125,7 @@ namespace Project_Assessment_3
 							case "no" :
 								goto menu;
 							default :
+								//* apabila user belum yakin untuk keluar dari aplikasi
 								Console.WriteLine("");
 								Console.WriteLine("Please choose 'yes' or 'no'");
 								Console.WriteLine("");
@@ -103,8 +139,9 @@ namespace Project_Assessment_3
 						break;
 								
 					default:
+						//* untuk ngeblok terjadinya pemilihan menu yang beda
 						if (masukan < 0 || masukan > 4){
-							Console.WriteLine("You just entered {0} which is a wrong value", masukan);
+							Console.WriteLine("You just entered {0} which is a wrong menu", masukan);
 						}
 
 						Console.WriteLine("\nPress Any Key To Exit");
@@ -120,7 +157,7 @@ namespace Project_Assessment_3
 				Console.ReadKey();
 				goto menu;
 			}
-        } // -> akhir main program
+        } // ?-> akhir main program
 
 //  !--------------------------------------- Akhir Main Program -----------------------------------------------!
 
@@ -148,16 +185,16 @@ namespace Project_Assessment_3
 						
 						MyGlobal[index - 1].Id = index;
 						Console.WriteLine("");
-						Console.Write("Masukan nama Mahasiswa : ");
+						Console.Write("Masukkan nama Mahasiswa : ");
 						MyGlobal[index - 1].Nama = Console.ReadLine();
 						Console.WriteLine("");
-						Console.Write("Masukan jenis Kelamin : " );
+						Console.Write("Masukkan jenis Kelamin : " );
 						MyGlobal[index - 1].Kelamin = Console.ReadLine();
 						Console.WriteLine("");
-						Console.Write("Masukan jumlah nilai tugas : ");
+						Console.Write("Masukkan jumlah nilai tugas : ");
 						MyGlobal[index - 1].ntugas = Convert.ToInt32(Console.ReadLine());
 						Console.WriteLine("");
-						Console.Write("Masukan jumlah nilai ujian : ");
+						Console.Write("Masukkan jumlah nilai ujian : ");
 						MyGlobal[index - 1].nujian = Convert.ToInt32(Console.ReadLine());
 						MyGlobal[index - 1].ntotal = MyGlobal[index - 1 ].ntugas + MyGlobal[index - 1 ].nujian;
 						MyGlobal[index - 1].nratarata = MyGlobal[index - 1].ntotal / 2;
