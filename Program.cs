@@ -17,7 +17,7 @@ namespace Project_Assessment_3
             
 		}        
 		
-        static Mahasiswa[] MyGlobal = new Mahasiswa[10]; //? deklarasi variabel array gelobal
+        static Mahasiswa[] MyGlobal = new Mahasiswa[10]; //? deklarasi variabel array global
 
 //  !--------------------------------------- Awal Main Program -----------------------------------------------!
         
@@ -34,31 +34,36 @@ namespace Project_Assessment_3
 				Console.Clear();
 				Console.WriteLine("      >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
 				Console.WriteLine("      |              		                                             |");
-                Console.WriteLine("      |               	PROGRAM DAFTAR ABSEN MAHASISWA                       |");
-                Console.WriteLine("      |                    	KELAS D4SM-44-03                             |");
+                Console.WriteLine("      |          Keep your head up girl. take your own desire                |");
+                Console.WriteLine("      |          everyone can make a option in ur life, but nafiisa          |");
+				Console.WriteLine("      |          still live on your soul. :)                    	     |");
 				Console.WriteLine("      |              		                                             |");
-				Console.WriteLine("      |              		                                             |");
-				Console.Write("             Masukkan username : ");
-				username = Console.ReadLine();
-				Console.Write("             Masukkan password : ");
-				password = Console.ReadLine();
+				Console.WriteLine("      >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+				
+			// 	Console.Write("             Masukkan username : ");
+			// 	username = Console.ReadLine();
+			// 	Console.Write("             Masukkan password : ");
+			// 	password = Console.ReadLine();
 
-			if ( username == "admin" && password == "admin123"){
-				goto menu;
-			} else {
-					Console.WriteLine("");
-					Console.WriteLine("                    ------------------****---------------------");
-					Console.WriteLine("");
-					Console.WriteLine("                   you entered the wrong username and password");		
-					Console.WriteLine("");		
-					Console.WriteLine("                    ------------------****---------------------");
-					Console.WriteLine("");
-					Console.WriteLine("                      Press Any Key for input a great password");
-					Console.WriteLine("");
-					Console.ReadKey();
-				goto login;
-			}
+			// if ( username == "admin" && password == "admin123"){
+			// 	goto menu;
+			// } else {
+			// 		Console.WriteLine("");
+			// 		Console.WriteLine("                    ------------------****---------------------");
+			// 		Console.WriteLine("");
+			// 		Console.WriteLine("                   you entered the wrong username and password");		
+			// 		Console.WriteLine("");		
+			// 		Console.WriteLine("                    ------------------****---------------------");
+			// 		Console.WriteLine("");
+			// 		Console.WriteLine("                      Press Any Key for input a great password");
+			// 		Console.WriteLine("");
+			// 		Console.ReadKey();
+			// 	goto login;
+			// }
+			Console.ReadKey();
 				// ?-> akhir menu login
+
+
 			
                 
                 menu : //?-> goto balik ke menu utama
@@ -80,6 +85,7 @@ namespace Project_Assessment_3
                 Console.WriteLine("      | 2. Menampilkan Data Mahasiswa      				     |");
                 Console.WriteLine("      | 3. Mencari Data Mahasiswa      				             |");
                 Console.WriteLine("      | 4. Menghapus Data Mahasiswa     			             |");
+				Console.WriteLine("      | 4. Mengubah Data Mahasiswa					     |");
 				Console.WriteLine("      |              		                                             |");
                 Console.WriteLine("      |>>>>>>>>>>>>>>>>>>>>>>>>>  0. Exit or Back  <<<<<<<<<<<<<<<<<<<<<<<<<<|");
 
@@ -104,6 +110,10 @@ namespace Project_Assessment_3
 						
 					case 4:
 						p.Hapus_Mahasiswa(); //* memanggil fungsi yang digunakan untuk menghapus
+						goto menu;
+
+					case 5:
+						p.Ubah_Mahaiswa(); //* memanggil fungsi mengubah mahasiswa
 						goto menu;
 						
 					case 0: //* digunakan padasaat user ingin keluar dari aplikasi
@@ -132,7 +142,7 @@ namespace Project_Assessment_3
 								Console.WriteLine("-------------****---------------");
 								Console.WriteLine("");
 								goto Benerin;
-						} // -> program menanyakan keluar
+						} // -> akhir program menanyakan keluar
 
 						Console.WriteLine("\nPress Any Key To Exit");
 						Console.ReadKey();
@@ -372,6 +382,99 @@ namespace Project_Assessment_3
 
 //   !--------------------------------------- akhir function menghapus Mahasiswa ---------------------------------!
 
+
+
+//   !--------------------------------------- awal fungsi ubah mahasiswa ---------------------------------!
+
+	public void Ubah_Mahaiswa() {
+		Console.WriteLine("");
+			string hapus;
+			int cari;
+			int ketemu = 0, posisi = 0;
+
+		//? mencari mahasiswa mana yang ingin di ubah
+
+			Console.Write("Nomor absen mahasiswa yang akan anda hapus = ");
+			cari = Convert.ToInt32(Console.ReadLine());
+
+			for (int n = 0; n < MyGlobal.Length; n++){
+
+				if (cari == MyGlobal[n].Id && MyGlobal[cari-1].terisi == 1){
+					ketemu = 1;
+					posisi = n;
+
+					Console.WriteLine("-------------------------------------------");
+					Console.WriteLine(" Mahasiswa dengan no absen ke-{0} ", MyGlobal[cari-1].Id);
+					Console.WriteLine("");
+					Console.WriteLine(" Nama Mahasiswa : " + MyGlobal[cari-1].Nama);
+					Console.WriteLine("");
+					Console.WriteLine(" Jenis Kelamin : " + MyGlobal[cari-1].Kelamin);
+					Console.WriteLine("");
+					Console.WriteLine(" Jumlah nilai tugas : " + MyGlobal[cari-1].ntugas);
+					Console.WriteLine("");
+					Console.WriteLine(" Jumlah nilai ujian : " + MyGlobal[cari-1].nujian);
+					Console.WriteLine("");
+					Console.WriteLine(" Jumlah nilai rata - rata : " + MyGlobal[cari-1].nratarata);
+					Console.WriteLine("-------------------------------------------");
+					Console.WriteLine("");
+				}
+
+			}
+
+			if (ketemu == 0){
+				Console.WriteLine("Sorry, the data you are looking for does not exist.");
+			}
+
+			//? akhir dari mencari mahasiswa yang ingin diubah
+
+			// ? sourch code ubah
+
+			Console.WriteLine("");
+
+            int index;
+
+            int j = 1;
+
+            for(int i = 0 ; i < j;  i++){
+				// Console.WriteLine("urutan index array {0}", i);
+				Console.WriteLine("-------------------------------------------");
+				Console.Write("Masukan Nomor absen mahasiswa ke : ");
+				index = Convert.ToInt32(Console.ReadLine());
+
+				for (int k = 0; k <= MyGlobal.Length; k++)
+				{
+					if (index == k) {
+						
+						MyGlobal[index - 1].Id = index;
+						Console.WriteLine("");
+						Console.Write("Masukkan nama Mahasiswa : ");
+						MyGlobal[index - 1].Nama = Console.ReadLine();
+						Console.WriteLine("");
+						Console.Write("Masukkan jenis Kelamin : " );
+						MyGlobal[index - 1].Kelamin = Console.ReadLine();
+						Console.WriteLine("");
+						Console.Write("Masukkan jumlah nilai tugas : ");
+						MyGlobal[index - 1].ntugas = Convert.ToInt32(Console.ReadLine());
+						Console.WriteLine("");
+						Console.Write("Masukkan jumlah nilai ujian : ");
+						MyGlobal[index - 1].nujian = Convert.ToInt32(Console.ReadLine());
+						MyGlobal[index - 1].ntotal = MyGlobal[index - 1 ].ntugas + MyGlobal[index - 1 ].nujian;
+						MyGlobal[index - 1].nratarata = MyGlobal[index - 1].ntotal / 2;
+						MyGlobal[index - 1].terisi = 1;
+						Console.WriteLine("--------------------------------------------");
+
+					}
+				}	
+			} // -> akhir mother for
+
+            Console.WriteLine("\n***** Succesfully Saved ! *****");
+			Console.WriteLine("");
+            Console.WriteLine("\nPress Any Key To Select Other Menu");
+            Console.ReadKey();
+
+	}
+
+//   !--------------------------------------- akhir fungsi ubah mahasiswa ---------------------------------!
 
     }
 }
